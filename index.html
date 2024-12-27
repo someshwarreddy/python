@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .parent div {
+            flex: 1 1 100%;
+            
+            background-color: red;
+        }
+
+        .sidebar {
+            order: -1
+        }
+
+        @media (min-width:426px) {
+          dummy{
+            color: yellow;
+          }
+          
+          
+            .sidebar {
+                grid-area: sidebar;
+            }
+
+            .content {
+                grid-area: content;
+            }
+
+            .header {
+                grid-area: header;
+            }
+
+
+            .wrapper {
+                display: grid;
+                grid-gap: 10px;
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                grid-template-areas:
+                    "header  sidebar  sidebar"
+                    "header content content";
+                background-color: #fff;
+                color: #444;
+            }
+
+            .box {
+                background-color: #444;
+                color: #fff;
+                border-radius: 5px;
+                padding: 20px;
+                font-size: 150%;
+
+            }
+
+            .header {
+                background-color: #999;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent wrapper">
+        <div class="box header">1</div>
+        <div class="box sidebar">2</div>
+        <div class="box content">3</div>
+
+    </div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li class="no"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+
+</html>
